@@ -1,0 +1,6 @@
+C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\DataCountService\DataCountServices\bin\Debug\DataCountServices.exe.config
+C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\DataCountService\DataCountServices\bin\Debug\DataCountServices.exe
+C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\DataCountService\DataCountServices\bin\Debug\DataCountServices.pdb
+C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\DataCountService\DataCountServices\obj\Debug\DataCountServices.csprojResolveAssemblyReference.cache
+C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\DataCountService\DataCountServices\obj\Debug\DataCountServices.exe
+C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\DataCountService\DataCountServices\obj\Debug\DataCountServices.pdb
