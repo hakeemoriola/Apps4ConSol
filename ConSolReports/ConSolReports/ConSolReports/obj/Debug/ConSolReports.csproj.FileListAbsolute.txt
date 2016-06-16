@@ -6,3 +6,11 @@ C:\Projects\ConSolReports\ConSolReports\ConSolReports\obj\Debug\ConSolReports.cs
 C:\Projects\ConSolReports\ConSolReports\ConSolReports\obj\Debug\ConSolReports.exe
 C:\Projects\ConSolReports\ConSolReports\ConSolReports\obj\Debug\ConSolReports.pdb
 C:\Projects\ConSolReports\ConSolReports\ConSolReports\obj\Debug\ConSolReports.csprojResolveAssemblyReference.cache
+C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\ConSolReports\ConSolReports\ConSolReports\bin\Debug\ConSolReports.exe.config
+C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\ConSolReports\ConSolReports\ConSolReports\bin\Debug\ConSolReports.exe
+C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\ConSolReports\ConSolReports\ConSolReports\bin\Debug\ConSolReports.pdb
+C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\ConSolReports\ConSolReports\ConSolReports\obj\Debug\ConSolReports.csprojResolveAssemblyReference.cache
+C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\ConSolReports\ConSolReports\ConSolReports\obj\Debug\ConSolReports.ProjectInstaller.resources
+C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\ConSolReports\ConSolReports\ConSolReports\obj\Debug\ConSolReports.csproj.GenerateResource.Cache
+C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\ConSolReports\ConSolReports\ConSolReports\obj\Debug\ConSolReports.exe
+C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\ConSolReports\ConSolReports\ConSolReports\obj\Debug\ConSolReports.pdb

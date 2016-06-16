@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConSolReports", "..\ConSolR
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ConSolReportsDash", "..\ConSolReports\ConSolReportsDash\ConSolReportsDash\ConSolReportsDash.vdproj", "{34389C59-D0A4-4AA3-A9E5-B10967B077E3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConSol.App.Data", "..\ConSol.App.Data\ConSol.App.Data\ConSol.App.Data.csproj", "{FAD53ED6-5DB7-4B83-9855-DBCBAD3736A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,14 @@ Global
 		{34389C59-D0A4-4AA3-A9E5-B10967B077E3}.Release|Any CPU.Build.0 = Release
 		{34389C59-D0A4-4AA3-A9E5-B10967B077E3}.Release|x86.ActiveCfg = Release
 		{34389C59-D0A4-4AA3-A9E5-B10967B077E3}.Release|x86.Build.0 = Release
+		{FAD53ED6-5DB7-4B83-9855-DBCBAD3736A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAD53ED6-5DB7-4B83-9855-DBCBAD3736A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAD53ED6-5DB7-4B83-9855-DBCBAD3736A2}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FAD53ED6-5DB7-4B83-9855-DBCBAD3736A2}.Debug|x86.Build.0 = Debug|Any CPU
+		{FAD53ED6-5DB7-4B83-9855-DBCBAD3736A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAD53ED6-5DB7-4B83-9855-DBCBAD3736A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAD53ED6-5DB7-4B83-9855-DBCBAD3736A2}.Release|x86.ActiveCfg = Release|Any CPU
+		{FAD53ED6-5DB7-4B83-9855-DBCBAD3736A2}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
