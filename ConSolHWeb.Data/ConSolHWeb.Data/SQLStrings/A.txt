@@ -1,0 +1,112 @@
+﻿/*
+	
+*/
+
+
+Declare @tmp table (userid varchar(20), logDate datetime, TIn time, TOut time,  DayName varchar(20), ShiftType varchar(2),
+	overTime numeric(19,6), specialOT numeric(19,6), totHrs numeric(19,6), checkType char(1), maxtime int, 
+	 satOT int, sunOT int, PHOT int)
+	
+	
+Declare @tMorn Time, @tNight Time, @logid int
+
+Set @tMorn = '16:00:00'
+Set @tNight = '04:00:00'
+Set @logid = 1
+
+
+	
+
+Insert @tmp (userid,logDate,TIn,DayName, ShiftType,checkType, maxtime)
+Select a.U_Userid,convert(date,MAX(a.U_CheckTime),103), MAX(U_CheckTime), DATENAME(WEEKDAY,U_CheckDate),
+	 'D', U_checktype,MAX(DATEPART(HOUR,U_CheckTime))
+from [@OWA_NP_CHECKINOUT] a
+where   U_checktype = 'I' --and a.U_Logid > @logid
+Group By U_userid,U_CheckDate,U_checktype
+having MAX(DATEPART(HOUR,U_CheckTime))  < 12
+union all
+Select a.U_Userid,convert(date,MAX(a.U_CheckTime),103), MAX(U_CheckTime), DATENAME(WEEKDAY,U_CheckDate),
+	 'N', U_checktype,MAX(DATEPART(HOUR,U_CheckTime))
+from [@OWA_NP_CHECKINOUT] a
+where U_checktype = 'I' --and a.U_Logid > @logid
+	--and DATEPART(HOUR,U_CheckTime) > 16
+Group By U_userid,U_CheckDate,U_checktype
+having MAX(DATEPART(HOUR,U_CheckTime))  > 16
+
+Update @tmp
+Set TOut = b.checktime
+from @tmp a join
+	(Select a.U_Userid userid,convert(date,MAX(a.U_CheckTime),103) checkdate, MAX(U_CheckTime) checktime, DATENAME(WEEKDAY,U_CheckDate) dName, 'D' shiftType
+		from [@OWA_NP_CHECKINOUT] a
+		where U_checktype = 'O'
+			--and DATEPART(HOUR,U_CheckTime) > 16
+				Group By U_userid,U_CheckDate
+				having MAX(DATEPART(HOUR,U_CheckTime))  > 12
+	) b 
+	on a.userid = b.userid and a.logDate = b.checkdate
+	
+
+Update @tmp
+Set TOut = b.checktime
+from @tmp a join
+	(Select a.U_Userid userid,convert(date,MAX(a.U_CheckTime),103) checkdate, MAX(U_CheckTime) checktime, DATENAME(WEEKDAY,U_CheckDate) dName, 'N' shiftType, DATEADD(dd,-1,U_checkdate) Nextday
+		from [@OWA_NP_CHECKINOUT] a
+		where U_checktype = 'O'
+			--and DATEPART(HOUR,U_CheckTime) < 10
+		Group By U_userid,U_CheckDate
+		having MAX(DATEPART(HOUR,U_CheckTime))  < 10
+	) b 
+	on a.userid = b.userid and a.logDate = b.Nextday 
+		
+update @tmp
+set overTime = case When DATEDIFF(HOUR,@tMorn,tout) < 4 then DATEDIFF(HOUR,@tMorn,tout) else 4 end 
+where ShiftType = 'D' and DayName not in ('Sunday', 'Saturday')
+
+update @tmp
+set overTime = case When DATEDIFF(HOUR,@tNight,tout) < 4 then DATEDIFF(HOUR,@tNight,tout) else 4 end 
+where ShiftType = 'N' and DayName not in ('Sunday', 'Saturday')
+
+update @tmp
+set satOT = DATEDIFF(HOUR,tIn,tout) 
+where  DayName = 'Saturday'
+
+update @tmp
+set sunOT = DATEDIFF(HOUR,tIn,tout) 
+where  DayName = 'Sunday'
+
+update @tmp
+set specialOT = DATEDIFF(HOUR,tIn,tout)
+where logDate in (Select strDate from Holidays)
+
+
+--Select userid, logDate, TIn, TOut,  DayName, ShiftType,overTime, specialOT, totHrs, 
+--		checkType, maxtime, satOT, sunOT, PHOT 
+--from @tmp where TOut is not null
+
+
+
+Declare @tmp2 table (xCode int identity(1,1), UserId int, logdate datetime,
+		totWHrs numeric(19,6), overTime numeric(19,6), satOT numeric(19,6), tIn time, tOut Time,
+		dayname varchar(20), shiftType char(1), sunOT numeric(19,6), PHOT numeric(19,6))
+		
+insert into @tmp2(UserId,logdate,totWHrs,overTime,satOT,tIn,tOut,dayname,sunOT, PHOT, shiftType)
+Select userid, logDate, totHrs,overTime, satOT,TIn, TOut,  DayName,sunOT, PHOT, ShiftType
+from @tmp where TOut is not null
+
+
+INSERT INTO [@OWA_NP_BIOSUMM]([Code],[Name],[U_userid],[U_date],[U_dayname],[U_WorkHours],[U_OverTime],
+								[U_SpecialOT],[U_Tin],[U_TOut],[U_ShiftType], [U_PH],[U_BatchId])
+select xCode,xcode, UserId,a.logdate,a.dayname,DATEDIFF(HOUR,tIn,tout) totHrs,isnull(a.overTime,0) + ISNULL(a.satOT,0),
+	ISNULL(PHOT,0) + ISNULL(sunOT,0),cast(CONVERT(CHAR(10), CONVERT(datetime, ltrim(rtrim(a.logdate)),101), 101) + ' ' + a.tIn as datetime),
+	cast(CONVERT(CHAR(10), CONVERT(datetime, ltrim(rtrim(a.logdate)),101), 101) + ' ' + a.tOut as datetime),a.shiftType,
+	 CASE when PHOT IS not null then 'Y' else 'N' end PH,
+	 U_batchId
+from @tmp2 a
+where shiftType = 'D'
+union all
+select xCode,xcode, UserId,a.logdate,a.dayname,DATEDIFF(HOUR,tout,tin) totHrs,isnull(a.overTime,0) + ISNULL(a.satOT,0),
+	ISNULL(PHOT,0) + ISNULL(sunOT,0),a.tIn,a.tOut ,a.shiftType,
+	 CASE when PHOT IS not null then 'Y' else 'N' end PH,
+	 U_batchId
+from @tmp2 a
+where shiftType = 'N'

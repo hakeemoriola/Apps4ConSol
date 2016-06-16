@@ -1,0 +1,20 @@
+﻿Uninstalling assembly 'C:\Projects\ConSolHarmonizer\ConSolHarmonizer\ConSolHarmonizer\bin\Release\ConSolHarmonizer.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Projects\ConSolHarmonizer\ConSolHarmonizer\ConSolHarmonizer\bin\Release\ConSolHarmonizer.InstallLog
+   assemblypath = C:\Projects\ConSolHarmonizer\ConSolHarmonizer\ConSolHarmonizer\bin\Release\ConSolHarmonizer.exe
+Removing EventLog source ConSol Harmonizer Service.
+Service ConSol Harmonizer Service is being removed from the system...
+Service ConSol Harmonizer Service was successfully removed from the system.
+Installing assembly 'C:\Projects\ConSolHarmonizer\ConSolHarmonizer\ConSolHarmonizer\bin\Release\ConSolHarmonizer.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = C:\Projects\ConSolHarmonizer\ConSolHarmonizer\ConSolHarmonizer\bin\Release\ConSolHarmonizer.exe
+   logfile = C:\Projects\ConSolHarmonizer\ConSolHarmonizer\ConSolHarmonizer\bin\Release\ConSolHarmonizer.InstallLog
+Installing service ConSol Harmonizer Service...
+Creating EventLog source ConSol Harmonizer Service in log Application...
+Rolling back assembly 'C:\Projects\ConSolHarmonizer\ConSolHarmonizer\ConSolHarmonizer\bin\Release\ConSolHarmonizer.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = C:\Projects\ConSolHarmonizer\ConSolHarmonizer\ConSolHarmonizer\bin\Release\ConSolHarmonizer.exe
+   logfile = C:\Projects\ConSolHarmonizer\ConSolHarmonizer\ConSolHarmonizer\bin\Release\ConSolHarmonizer.InstallLog

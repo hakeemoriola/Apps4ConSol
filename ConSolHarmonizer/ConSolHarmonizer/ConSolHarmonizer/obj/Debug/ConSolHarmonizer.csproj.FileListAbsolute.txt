@@ -1,0 +1,7 @@
+C:\Projects\ConSolHarmonizer\ConSolHarmonizer\ConSolHarmonizer\bin\Debug\ConSolHarmonizer.exe
+C:\Projects\ConSolHarmonizer\ConSolHarmonizer\ConSolHarmonizer\bin\Debug\ConSolHarmonizer.pdb
+C:\Projects\ConSolHarmonizer\ConSolHarmonizer\ConSolHarmonizer\obj\Debug\ConSolHarmonizer.exe
+C:\Projects\ConSolHarmonizer\ConSolHarmonizer\ConSolHarmonizer\obj\Debug\ConSolHarmonizer.pdb
+C:\Projects\ConSolHarmonizer\ConSolHarmonizer\ConSolHarmonizer\obj\Debug\ConSol.ProjectInstaller.resources
+C:\Projects\ConSolHarmonizer\ConSolHarmonizer\ConSolHarmonizer\obj\Debug\ConSolHarmonizer.csproj.GenerateResource.Cache
+C:\Projects\ConSolHarmonizer\ConSolHarmonizer\ConSolHarmonizer\bin\Debug\ConSolHarmonizer.exe.config

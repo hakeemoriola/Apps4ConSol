@@ -1,0 +1,8 @@
+C:\Projects\ConSolHarmonizer\ConSolHarmonizer\ConSolHarmonizer\bin\Release\ConSolHarmonizer.exe
+C:\Projects\ConSolHarmonizer\ConSolHarmonizer\ConSolHarmonizer\bin\Release\ConSolHarmonizer.pdb
+C:\Projects\ConSolHarmonizer\ConSolHarmonizer\ConSolHarmonizer\obj\Release\ConSol.ProjectInstaller.resources
+C:\Projects\ConSolHarmonizer\ConSolHarmonizer\ConSolHarmonizer\obj\Release\ConSolHarmonizer.csproj.GenerateResource.Cache
+C:\Projects\ConSolHarmonizer\ConSolHarmonizer\ConSolHarmonizer\obj\Release\ConSolHarmonizer.exe
+C:\Projects\ConSolHarmonizer\ConSolHarmonizer\ConSolHarmonizer\obj\Release\ConSolHarmonizer.pdb
+C:\Projects\ConSolHarmonizer\ConSolHarmonizer\ConSolHarmonizer\bin\Release\ConSolHarmonizer.exe.config
+C:\Projects\ConSolHarmonizer\ConSolHarmonizer\ConSolHarmonizer\obj\Release\ConSolHarmonizer.csprojResolveAssemblyReference.cache

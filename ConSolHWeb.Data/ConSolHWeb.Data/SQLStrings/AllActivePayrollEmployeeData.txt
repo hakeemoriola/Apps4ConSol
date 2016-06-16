@@ -1,0 +1,49 @@
+﻿DECLARE @EmpRun Table 
+(
+	Empid varchar(10), 
+	LastName varchar(20), 
+	MiddleName varchar(20),
+	FirstName varchar(20), 
+	fullName varchar(80), 
+	Gender varchar(20),
+	Dept varchar(20),
+	Category varchar(20),
+	SalaryStep varchar(20),
+	Deduction numeric(20,6), 
+	Earnings numeric(20,6), 
+	NetTotal numeric(19,6)
+)
+
+insert into @EmpRun(empid, LastName, FirstName,MiddleName,fullName,Dept,Gender, Category, SalaryStep,deduction, Earnings)
+select EmpId,LastName,Firstname,MiddleName,fullName,d.Name Dept,Gender, c.Name Category,s.Name SalaryStep,0,0 
+from
+EmployeeDetails e 
+join EmployeeCategory c on e.Category = c.Id
+join SalarySteps s on e.SalaryStep = s.Id 
+join Depts d on e.Dept = d.Id
+--where Active=1
+
+update @EmpRun
+	set deduction = b.amount
+	from @EmpRun a join 
+		(Select empid, Sum(isnull(Amount,0)) Amount
+		from EmpWage e join WageItems w on e.WageCode=w.WageCode
+		Where w.WageType = 'Deduction'
+			Group by empid ) b
+	on a.empid = b.empid
+
+	update @EmpRun
+	set Earnings = b.amount
+	from @EmpRun a join 
+		(Select empid, Sum(isnull(Amount,0)) Amount
+		from EmpWage e join WageItems w on e.WageCode=w.WageCode
+		Where w.WageType = 'Earning'
+			Group by empid ) b
+	on a.empid = b.empid 
+
+update @EmpRun set
+NetTotal = Earnings - deduction
+
+select Category, SalaryStep,Empid,FirstName,LastName,MiddleName,fullName,Gender,Dept,Deduction,Earnings,NetTotal from @EmpRun
+order by Category, SalaryStep
+

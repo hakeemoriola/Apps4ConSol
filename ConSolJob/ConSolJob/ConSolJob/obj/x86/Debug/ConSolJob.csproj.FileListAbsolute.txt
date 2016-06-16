@@ -1,0 +1,4 @@
+C:\Projects\ConSolJob\ConSolJob\ConSolJob\bin\Debug\ConSolJob.exe
+C:\Projects\ConSolJob\ConSolJob\ConSolJob\bin\Debug\ConSolJob.pdb
+C:\Projects\ConSolJob\ConSolJob\ConSolJob\obj\x86\Debug\ConSolJob.exe
+C:\Projects\ConSolJob\ConSolJob\ConSolJob\obj\x86\Debug\ConSolJob.pdb

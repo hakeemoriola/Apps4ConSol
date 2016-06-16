@@ -1,0 +1,249 @@
+﻿body{font-family:Arial; font-size:12px;}
+.tablestyle 
+{   
+    border: solid 1px #7f7f7f;
+    width: 1180px;
+    vertical-align:top;   
+    
+}
+
+.SearchPanel 
+{   
+    border: solid 1px #7f7f7f;
+    width: 1180px;
+    vertical-align:top;   
+    background-color: #edf5ff;
+    height:30px;
+}
+
+.srcColor {scrollbar-base-color: #E0ECF8;}
+
+.altrowstyle 
+{
+    background-color: #edf5ff;
+    
+}
+
+.headerstyle th 
+{
+    background: url(img/sprite.png) repeat-x 0px 0px;
+    border-color: #989898 #cbcbcb #989898 #989898;
+    border-style: solid solid solid none;
+    border-width: 1px 1px 1px medium;
+    color: #CDE5FF; 
+    padding: 4px 5px 4px 10px;
+    text-align:left;
+    vertical-align:  top ;
+    background-color:#CDE5FF;
+    position:relative ;
+
+}  
+
+.headerstyle th a
+{
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    color: #063E77;
+    display: block;
+    padding-right: 10px;
+}    
+
+.rowstyle .sortaltrow, .altrowstyle .sortaltrow 
+{
+    background-color: #edf5ff;
+    
+}
+
+.rowstyle .sortrow, .altrowstyle .sortrow 
+{
+    background-color: #dbeaff;
+}
+
+.rowstyle td, .altrowstyle td 
+{
+    padding: 4px 10px 4px 10px;
+    border-right: solid 1px #cbcbcb;
+}
+
+.headerstyle .sortascheader 
+{
+    background: url(App_Themes/img/sprite.png) repeat-x 0px -100px;
+   font-weight:bold;
+}
+
+.headerstyle .sortascheader a 
+{
+    background: url(App_Themes/img/dt-arrow-up.png) no-repeat right 50%;
+   font-weight:bold;
+} 
+
+.headerstyle .sortdescheader 
+{
+    background: url(App_Themes/img/sprite.png) repeat-x 0px -100px;
+   font-weight:bold;
+}   
+
+.headerstyle .sortdescheader a 
+{
+    background: url(App_Themes/img/dt-arrow-dn.png) no-repeat right 50%;
+   font-weight:bold;
+} 
+
+h1, h2, h3, h4, h5, h6
+{
+    color: #4D77C6;
+}
+
+h1
+{
+    font-size: 30px;
+    text-align :center;
+}
+
+div#websiteTitle 
+{
+    color: #4D77C6;
+    margin-top: 10px;    
+    font-size: 30px;
+    padding-left: 40px;   
+}
+
+div.framed 
+{
+    border: solid 1px #9CB6E9;
+    padding: 10px;
+    width: 1200px;
+    background-color: #F0F6FC;
+	height:565px;
+}
+
+
+
+.framed2 
+{
+    border: solid 1px #9CB6E9;
+    padding: 10px;
+    width:575px;
+    background-color: #ECFFF8;
+    vertical-align:top;
+  
+}
+
+
+#frame2 
+{
+    border: solid 1px #9CB6E9;
+    padding: 10px;
+    width: 1200px;
+    background-color: #ECFFF8;
+    vertical-align:top;
+}
+.button 
+{
+    color: #FFFFFF;
+    background-color: #4D77C6;
+    border-top: solid 1px #FFFFFF;
+    border-left: solid 1px #FFFFFF;
+    border-right: solid 1px #FFFFFF;
+    border-bottom: solid 1px #000000;
+    margin: 5px 0px 5px 0px;    
+    float:right;   
+    height:30px;
+    width:130px;
+    position:inherit;
+}
+.searchbtn
+{
+    color: #FFFFFF;
+    background-color: #4D77C6;
+    border-top: solid 1px #FFFFFF;
+    border-left: solid 1px #FFFFFF;
+    border-right: solid 1px #FFFFFF;
+    border-bottom: solid 1px #000000;
+    margin: 0px 5px 0px 0px;   
+    height:22px;
+    width:60px;
+    vertical-align:top;
+}
+.reloadbtn
+{
+    color: #FFFFFF;
+    background-color: #4D77C6;
+    border-top: solid 1px #FFFFFF;
+    border-left: solid 1px #FFFFFF;
+    border-right: solid 1px #FFFFFF;
+    border-bottom: solid 1px #000000;
+    margin: 0px 20px 0px 0px;   
+    height:22px;
+    width:60px;
+    vertical-align:top;
+}
+
+.wizbtn
+{
+    width:80px;
+	/*right:170px;	
+	position:absolute;*/
+}
+
+input.textbox 
+{
+    width: 338px;
+    border: solid 1px #000000;
+    margin: 2px 0px 2px 0px;
+}
+
+.datapager 
+{ 
+    font-family:arial,sans-serif;
+    text-align:center;
+    padding-top:0px;
+    padding-bottom:0px;
+    padding-left:7px;
+    padding-right:7px;	
+    font-size:15px;
+    font-weight:bold;
+    border-width:1px;
+    border-style: solid;
+    color:#063E77;    
+     margin-top:50px;
+     margin-bottom:0px;
+     margin-left:7px;
+     margin-right:7px;
+} 
+
+
+TR.pagerstyle
+{
+ left: 25px;
+ width: 1180px;
+ border-right-style: solid;
+ position: absolute;
+ top: 512px;
+ height: 25px;
+ text-align: right;
+ border-right-color: navy;
+ border-width:1px;
+ border-style: solid;
+}
+.div pager-row TD
+{
+    border-top:solid 2px #bbd9ee;  
+     
+}
+
+input[type="text"] {  
+    border: solid 1px #999;    
+    }
+    
+
+select 
+{
+	 background-color:#FFFFFF;
+	 margin-top:-2px;
+	 margin-left:-2px;
+	 border-collapse:inherit;
+	 border-bottom-style:solid;
+	 border-width:thin;
+} 

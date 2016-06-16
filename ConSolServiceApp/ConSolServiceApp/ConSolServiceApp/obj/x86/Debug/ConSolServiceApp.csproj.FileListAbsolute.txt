@@ -1,0 +1,8 @@
+C:\Projects\ConSolServiceApp\ConSolServiceApp\ConSolServiceApp\bin\Debug\ConSolServiceApp.exe
+C:\Projects\ConSolServiceApp\ConSolServiceApp\ConSolServiceApp\bin\Debug\ConSolServiceApp.pdb
+C:\Projects\ConSolServiceApp\ConSolServiceApp\ConSolServiceApp\obj\x86\Debug\ConSolServiceApp.Properties.Resources.resources
+C:\Projects\ConSolServiceApp\ConSolServiceApp\ConSolServiceApp\obj\x86\Debug\ConSolServiceApp.csproj.GenerateResource.Cache
+C:\Projects\ConSolServiceApp\ConSolServiceApp\ConSolServiceApp\obj\x86\Debug\ConSolServiceApp.exe
+C:\Projects\ConSolServiceApp\ConSolServiceApp\ConSolServiceApp\obj\x86\Debug\ConSolServiceApp.pdb
+C:\Projects\ConSolServiceApp\ConSolServiceApp\ConSolServiceApp\obj\x86\Debug\ConSolServiceApp.Form1.resources
+C:\Projects\ConSolServiceApp\ConSolServiceApp\ConSolServiceApp\obj\x86\Debug\ConSolServiceApp.csprojResolveAssemblyReference.cache

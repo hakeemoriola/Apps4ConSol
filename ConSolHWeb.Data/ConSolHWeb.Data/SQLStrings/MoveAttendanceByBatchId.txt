@@ -1,0 +1,38 @@
+﻿declare @BatchNo int
+set @BatchNo = OWAPARAM1
+
+declare @OWA_CHECKINOUT TABLE 
+(
+	ID int identity(1,1),
+	[U_Userid] [nvarchar](20),
+	[U_CheckDate] [datetime],
+	[U_Sensorid] [nvarchar](10),
+	[U_WorkType] [int],
+	[U_AttFlag] [int],
+	[U_OpenDoorFlag] [nvarchar](5),
+	[U_CheckTime] [datetime],
+	[U_CheckType] [char](1),
+	[U_BatchId] [int]
+)
+
+insert into @OWA_CHECKINOUT(U_Userid,U_BatchId, U_CheckDate,U_Sensorid,U_AttFlag,U_WorkType,U_OpenDoorFlag,U_CheckType,U_CheckTime)
+select ACNo,BatchId,CONVERT(datetime, ltrim(rtrim(date)),101),1,1,0,'False','I',
+case 
+			when clockin = '' then cast(CONVERT(CHAR(10), CONVERT(datetime, ltrim(rtrim(date)),101), 101) + ' ' + OnDuty as datetime)
+			ELSE cast(CONVERT(CHAR(10), CONVERT(datetime, ltrim(rtrim(date)),101), 101) + ' ' + ClockIn as datetime)
+end 
+from BatchDetails where BatchId = @BatchNo
+
+insert into @OWA_CHECKINOUT(U_Userid,U_BatchId, U_CheckDate,U_Sensorid,U_AttFlag,U_WorkType,U_OpenDoorFlag,U_CheckType,U_CheckTime)
+select ACNo,BatchId,CONVERT(datetime, ltrim(rtrim(date)),101),1,1,0,'False','O',  
+case 
+			when clockin = '' then cast(CONVERT(CHAR(10), CONVERT(datetime, ltrim(rtrim(date)),101), 101) + ' ' + Offduty as datetime)
+			ELSE cast(CONVERT(CHAR(10), CONVERT(datetime, ltrim(rtrim(date)),101), 101) + ' ' + ClockOut as datetime)
+end 
+from BatchDetails where BatchId = @BatchNo
+
+
+ INSERT INTO [@OWA_NP_CHECKINOUT]([U_Userid],[U_CheckDate],[U_Sensorid],[U_WorkType],[U_AttFlag],[U_OpenDoorFlag],[U_CheckTime],[U_CheckType],[U_BatchId])
+select U_Userid,U_CheckDate,U_Sensorid,U_WorkType,U_AttFlag,U_OpenDoorFlag,U_CheckTime,U_CheckType,U_BatchId from @OWA_CHECKINOUT 
+
+

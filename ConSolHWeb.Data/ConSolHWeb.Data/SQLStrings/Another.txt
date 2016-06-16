@@ -1,0 +1,28 @@
+﻿						select  p1.EmpId,
+		                        p1.EmpCode,
+		                        p1.firstname, 
+		                        p1.LastName,
+		                        p1.MiddleName,
+		                        p1.FullName,
+		                        d.Name Dept,
+		                        c.Name Category,
+		                        q.Name SalaryStep,
+		                        sum(s.Amount) Deduction, 
+		                        sum(k.Amount) Earning,  
+		                        (sum(k.Amount) - sum(s.Amount)) NetTotal  
+                        from EmployeeDetails p1
+                                              join EmployeeCategory c on p1.Category = c.Id
+                                              join  Depts d on p1.Dept = d.Id
+					                          join SalarySteps q on p1.SalaryStep = q.Id 
+                                              join SalaryStepDetails  s  on p1.SalaryStep = s.StepWageId and s.WageType = 'Deduction'
+					                          join SalaryStepDetails  k  on p1.SalaryStep = k.StepWageId and k.WageType = 'Earning'
+                        group by p1.EmpId,
+		                        p1.EmpCode,
+		                        p1.firstname, 
+		                        p1.LastName,
+		                        p1.MiddleName,
+		                        p1.FullName,
+		                        c.Name,
+		                        d.Name,
+		                        q.Name 
+                        order by Category, Dept

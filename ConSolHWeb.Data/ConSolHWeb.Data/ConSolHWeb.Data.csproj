@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E49A636A-CF65-426C-8B5D-DAF8E95769C2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ConSolHWeb.Data</RootNamespace>
+    <AssemblyName>ConSolHWeb.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Users\OMOH-PC\Documents\Visual Studio 2012\Projects\ConSolHWeb\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Users\OMOH-PC\Documents\Visual Studio 2012\Projects\ConSolHWeb\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ExcelLibrary">
+      <HintPath>..\..\..\Users\OMOH-PC\Downloads\ExcelLibrary_20110730\ExcelLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationBlocks.Data">
+      <HintPath>..\..\ConSol\ConSol\ConSol\bin\Microsoft.ApplicationBlocks.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CPNetFrameWorkDataProvidersSection.cs" />
+    <Compile Include="DataCount.cs" />
+    <Compile Include="DataProviders\ColumnName.cs" />
+    <Compile Include="DataProviders\DataProvider.cs" />
+    <Compile Include="DataProviders\DataService.cs" />
+    <Compile Include="DataProviders\EmployeeDetail2.cs" />
+    <Compile Include="DataProviders\EmpPayItem.cs" />
+    <Compile Include="DataProviders\Enrollee2.cs" />
+    <Compile Include="DataProviders\ParsedData.cs" />
+    <Compile Include="DataProviders\SqlDataProvider.cs" />
+    <Compile Include="DataProviders\SqlService.cs" />
+    <Compile Include="DataProviders\Stuff.cs" />
+    <Compile Include="Employee.cs" />
+    <Compile Include="ExportModel.cs" />
+    <Compile Include="GridViewControl\GridView.cs" />
+    <Compile Include="HtmlRemoval.cs" />
+    <Compile Include="IndicatorData.cs" />
+    <Compile Include="Messages.cs" />
+    <Compile Include="Models\BaseMetaColumn.cs" />
+    <Compile Include="Models\Config.cs" />
+    <Compile Include="Models\ConSetting.cs" />
+    <Compile Include="Models\ConSolHDBContext.cs" />
+    <Compile Include="Models\DataCountDash.cs" />
+    <Compile Include="Models\DataDashBoard.cs" />
+    <Compile Include="Models\DBMetaColumn.cs" />
+    <Compile Include="Models\DBMetaTable.cs" />
+    <Compile Include="Models\FAQ.cs" />
+    <Compile Include="Models\FAQResource.cs" />
+    <Compile Include="Models\FileType.cs" />
+    <Compile Include="Models\Mapping\BaseMetaColumnMap.cs" />
+    <Compile Include="Models\Mapping\ConfigMap.cs" />
+    <Compile Include="Models\Mapping\ConSettingMap.cs" />
+    <Compile Include="Models\Mapping\DataCountDashMap.cs" />
+    <Compile Include="Models\Mapping\DataDashBoardMap.cs" />
+    <Compile Include="Models\Mapping\DBMetaColumnMap.cs" />
+    <Compile Include="Models\Mapping\DBMetaTableMap.cs" />
+    <Compile Include="Models\Mapping\FAQMap.cs" />
+    <Compile Include="Models\Mapping\FAQResourceMap.cs" />
+    <Compile Include="Models\Mapping\FileTypeMap.cs" />
+    <Compile Include="Models\Mapping\MatchMetaColumnMap.cs" />
+    <Compile Include="Models\Mapping\ModuleActionPermmissionMap.cs" />
+    <Compile Include="Models\Mapping\ModuleMap.cs" />
+    <Compile Include="Models\Mapping\ModulePermmissionMap.cs" />
+    <Compile Include="Models\Mapping\ModulesActionMap.cs" />
+    <Compile Include="Models\Mapping\ModulesInRoleMap.cs" />
+    <Compile Include="Models\Mapping\NgPrefixMap.cs" />
+    <Compile Include="Models\Mapping\PageCTRLMap.cs" />
+    <Compile Include="Models\Mapping\PageMap.cs" />
+    <Compile Include="Models\Mapping\sysdiagramMap.cs" />
+    <Compile Include="Models\Mapping\USERINFOMap.cs" />
+    <Compile Include="Models\Mapping\UserInRoleMap.cs" />
+    <Compile Include="Models\Mapping\UserMap.cs" />
+    <Compile Include="Models\Mapping\UserRoleMap.cs" />
+    <Compile Include="Models\Mapping\UsrExportMap.cs" />
+    <Compile Include="Models\Mapping\VxAddressMap.cs" />
+    <Compile Include="Models\Mapping\VxCountryMap.cs" />
+    <Compile Include="Models\Mapping\VxCustomerMap.cs" />
+    <Compile Include="Models\Mapping\VxDataPointMap.cs" />
+    <Compile Include="Models\Mapping\VxDbDataSourceMap.cs" />
+    <Compile Include="Models\Mapping\VxEmailMap.cs" />
+    <Compile Include="Models\Mapping\VxGoeZoneMap.cs" />
+    <Compile Include="Models\Mapping\VxLGAMap.cs" />
+    <Compile Include="Models\Mapping\VxNameMap.cs" />
+    <Compile Include="Models\Mapping\VxProductMap.cs" />
+    <Compile Include="Models\Mapping\VxSearchParamMap.cs" />
+    <Compile Include="Models\Mapping\VxTelephoneMap.cs" />
+    <Compile Include="Models\MatchMetaColumn.cs" />
+    <Compile Include="Models\Module.cs" />
+    <Compile Include="Models\ModuleActionPermmission.cs" />
+    <Compile Include="Models\ModulePermmission.cs" />
+    <Compile Include="Models\ModulesAction.cs" />
+    <Compile Include="Models\ModulesInRole.cs" />
+    <Compile Include="Models\NgPrefix.cs" />
+    <Compile Include="Models\Page.cs" />
+    <Compile Include="Models\PageCTRL.cs" />
+    <Compile Include="Models\sysdiagram.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\USERINFO.cs" />
+    <Compile Include="Models\UserInRole.cs" />
+    <Compile Include="Models\UserRole.cs" />
+    <Compile Include="Models\UsrExport.cs" />
+    <Compile Include="Models\VxAddress.cs" />
+    <Compile Include="Models\VxCountry.cs" />
+    <Compile Include="Models\VxCustomer.cs" />
+    <Compile Include="Models\VxDataPoint.cs" />
+    <Compile Include="Models\VxDbDataSource.cs" />
+    <Compile Include="Models\VxEmail.cs" />
+    <Compile Include="Models\VxGoeZone.cs" />
+    <Compile Include="Models\VxLGA.cs" />
+    <Compile Include="Models\VxName.cs" />
+    <Compile Include="Models\VxProduct.cs" />
+    <Compile Include="Models\VxSearchParam.cs" />
+    <Compile Include="Models\VxTelephone.cs" />
+    <Compile Include="Modules\AuthenticationModule.cs" />
+    <Compile Include="PortalSecurity.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProviderSettingsValidation.cs" />
+    <Compile Include="RawData.cs" />
+    <Compile Include="RawDataDashBoard.cs" />
+    <Compile Include="UI\CustomControlDesigner.cs" />
+    <Compile Include="UI\DoClickCalendar.cs" />
+    <Compile Include="UI\DoClickCalendarScriptSetup.cs" />
+    <Compile Include="UrlData.cs" />
+    <Compile Include="Utility\ExpiryComponent.cs" />
+    <Compile Include="Utility\NumberToWordsConvertor.cs" />
+    <Compile Include="Utility\Util.cs" />
+    <Compile Include="VxExportDataObj.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SQLStrings\A.txt" />
+    <Content Include="SQLStrings\AllActivePayrollEmployeeData.txt" />
+    <Content Include="SQLStrings\Another.txt" />
+    <Content Include="SQLStrings\MoveAttendanceByBatchId.txt" />
+    <Content Include="SQLStrings\ReComputePayrollByBatchId.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

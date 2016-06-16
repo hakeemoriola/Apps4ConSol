@@ -1,0 +1,11 @@
+C:\Projects\ConSolHWeb.Data\ConSolHWeb.Data\bin\Release\ConSolHWeb.Data.dll.config
+C:\Projects\ConSolHWeb.Data\ConSolHWeb.Data\bin\Release\ConSolHWeb.Data.dll
+C:\Projects\ConSolHWeb.Data\ConSolHWeb.Data\bin\Release\ConSolHWeb.Data.pdb
+C:\Projects\ConSolHWeb.Data\ConSolHWeb.Data\bin\Release\EntityFramework.dll
+C:\Projects\ConSolHWeb.Data\ConSolHWeb.Data\bin\Release\EntityFramework.SqlServer.dll
+C:\Projects\ConSolHWeb.Data\ConSolHWeb.Data\bin\Release\ExcelLibrary.dll
+C:\Projects\ConSolHWeb.Data\ConSolHWeb.Data\bin\Release\EntityFramework.xml
+C:\Projects\ConSolHWeb.Data\ConSolHWeb.Data\bin\Release\EntityFramework.SqlServer.xml
+C:\Projects\ConSolHWeb.Data\ConSolHWeb.Data\obj\Release\ConSolHWeb.Data.csprojResolveAssemblyReference.cache
+C:\Projects\ConSolHWeb.Data\ConSolHWeb.Data\obj\Release\ConSolHWeb.Data.dll
+C:\Projects\ConSolHWeb.Data\ConSolHWeb.Data\obj\Release\ConSolHWeb.Data.pdb

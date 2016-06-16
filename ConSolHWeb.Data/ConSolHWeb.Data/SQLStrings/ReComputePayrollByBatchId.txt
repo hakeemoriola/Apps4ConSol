@@ -1,0 +1,71 @@
+﻿DECLARE @BatchId int
+SET @BatchId = 'OWAPARAM1'
+
+-- delete clock in and clock out for this batch
+DELETE FROM [@OWA_NP_CHECKINOUT]   where U_BatchId = @BatchId             
+
+-- delete payroll details for this batch
+DELETE FROM PayrollDetails  where BatchId =  @BatchId
+
+-- delete PayrollDetailHistories for this batch
+DELETE FROM PayrollDetailHistories  where BatchId =  @BatchId
+
+-- load employeedetails with missing staff
+
+INSERT INTO EmployeeDetails
+(EmpId, EmpCode, LastName, MiddleName, Firstname, FullName, Gender, Dept, Category, CategoryText, SalaryStep, Active)
+select c.ACNo,'','','','',c.Name,NULL,NULL,NULL,NULL,NULL,1
+from Calculated c
+where ACNo not in 
+(
+	select EmpId from EmployeeDetails
+) 
+
+
+-- load clockin and clockout data
+
+
+
+
+-- get everyone payroll data
+INSERT INTO PayrollDetails
+                         (BatchId, EmpId, EmpCode, WageCode, WageType, Amount)
+					select @BatchId, w.EmpId,d.EmpCode,e.WageCode,e.WageType,w.Amount                                  
+from EmpWage w
+join EmployeeDetails d on w.EmpId = d.EmpId
+join WageItems e on w.WageCode = e.WageCode
+where d.Active = 1
+
+-- calculate the totalhour for junior worker
+Update PayrollDetails 
+Set Amount = (Amount * b.WTime) / 198
+from PayrollDetails a join
+	(
+		select ACNo,WTime
+		from Calculated q
+		join EmployeeDetails e on q.ACNo = e.EmpId
+		where BatchId = @BatchId and e.Category in (1) and CONVERT(float,q.WTime) >=0 
+	) b 
+on a.EmpId = b.ACNo and a.WageCode = 'BASIC' and a.BatchId = @BatchId
+
+--
+Update PayrollDetails 
+Set Amount = (Amount * b.WTime) / 198
+from PayrollDetails a join
+	(
+		select ACNo,WTime
+		from Calculated q
+		join EmployeeDetails e on q.ACNo = e.EmpId
+		where BatchId = @BatchId and e.Category in (1) and CONVERT(float,q.WTime) >=0 
+	) b 
+on a.EmpId = b.ACNo and a.WageCode = 'BASIC' and a.BatchId = @BatchId
+
+
+
+
+
+
+
+
+
+                                        

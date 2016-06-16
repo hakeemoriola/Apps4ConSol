@@ -1,0 +1,7 @@
+C:\Projects\ConSolReports\ConSolReports\ConSolReports\bin\Release\ConSolReports.exe.config
+C:\Projects\ConSolReports\ConSolReports\ConSolReports\bin\Release\ConSolReports.exe
+C:\Projects\ConSolReports\ConSolReports\ConSolReports\bin\Release\ConSolReports.pdb
+C:\Projects\ConSolReports\ConSolReports\ConSolReports\obj\Release\ConSolReports.ProjectInstaller.resources
+C:\Projects\ConSolReports\ConSolReports\ConSolReports\obj\Release\ConSolReports.csproj.GenerateResource.Cache
+C:\Projects\ConSolReports\ConSolReports\ConSolReports\obj\Release\ConSolReports.exe
+C:\Projects\ConSolReports\ConSolReports\ConSolReports\obj\Release\ConSolReports.pdb

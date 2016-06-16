@@ -1,0 +1,1 @@
+﻿var mainApp = angular.TMS_SelfModule('mainApp', ['salesController'])

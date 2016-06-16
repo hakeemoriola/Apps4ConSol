@@ -1,0 +1,22 @@
+﻿Installing assembly 'C:\Projects\ConSolReports\ConSolReports\ConSolReports\bin\Release\ConSolReports.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Projects\ConSolReports\ConSolReports\ConSolReports\bin\Release\ConSolReports.InstallLog
+   assemblypath = C:\Projects\ConSolReports\ConSolReports\ConSolReports\bin\Release\ConSolReports.exe
+Installing service ConSol Report Service...
+Service ConSol Report Service has been successfully installed.
+Creating EventLog source ConSol Report Service in log Application...
+Committing assembly 'C:\Projects\ConSolReports\ConSolReports\ConSolReports\bin\Release\ConSolReports.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Projects\ConSolReports\ConSolReports\ConSolReports\bin\Release\ConSolReports.InstallLog
+   assemblypath = C:\Projects\ConSolReports\ConSolReports\ConSolReports\bin\Release\ConSolReports.exe
+Uninstalling assembly 'C:\Projects\ConSolReports\ConSolReports\ConSolReports\bin\Release\ConSolReports.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Projects\ConSolReports\ConSolReports\ConSolReports\bin\Release\ConSolReports.InstallLog
+   assemblypath = C:\Projects\ConSolReports\ConSolReports\ConSolReports\bin\Release\ConSolReports.exe
+Removing EventLog source ConSol Report Service.
+Service ConSol Report Service is being removed from the system...
+Service ConSol Report Service was successfully removed from the system.
+Attempt to stop service ConSol Report Service.

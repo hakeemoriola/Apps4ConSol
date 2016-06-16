@@ -1,0 +1,8 @@
+C:\Projects\ConSolReports\ConSolReports\ConSolReports\bin\Debug\ConSolReports.exe.config
+C:\Projects\ConSolReports\ConSolReports\ConSolReports\bin\Debug\ConSolReports.exe
+C:\Projects\ConSolReports\ConSolReports\ConSolReports\bin\Debug\ConSolReports.pdb
+C:\Projects\ConSolReports\ConSolReports\ConSolReports\obj\Debug\ConSolReports.ProjectInstaller.resources
+C:\Projects\ConSolReports\ConSolReports\ConSolReports\obj\Debug\ConSolReports.csproj.GenerateResource.Cache
+C:\Projects\ConSolReports\ConSolReports\ConSolReports\obj\Debug\ConSolReports.exe
+C:\Projects\ConSolReports\ConSolReports\ConSolReports\obj\Debug\ConSolReports.pdb
+C:\Projects\ConSolReports\ConSolReports\ConSolReports\obj\Debug\ConSolReports.csprojResolveAssemblyReference.cache

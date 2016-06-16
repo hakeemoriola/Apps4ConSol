@@ -1,0 +1,63 @@
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at ConSolServiceApp.Form1.ProcessData(List`1 listToPro) in C:\Projects\ConSolServiceApp\ConSolServiceApp\ConSolServiceApp\Form1.cs:line 157
+   at ConSolServiceApp.Form1.ProcessDBs() in C:\Projects\ConSolServiceApp\ConSolServiceApp\ConSolServiceApp\Form1.cs:line 99
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at ConSolServiceApp.Form1.ProcessData(List`1 listToPro) in C:\Projects\ConSolServiceApp\ConSolServiceApp\ConSolServiceApp\Form1.cs:line 157
+   at ConSolServiceApp.Form1.ProcessDBs() in C:\Projects\ConSolServiceApp\ConSolServiceApp\ConSolServiceApp\Form1.cs:line 99
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at ConSolServiceApp.Form1.ProcessData(List`1 listToPro) in C:\Projects\ConSolServiceApp\ConSolServiceApp\ConSolServiceApp\Form1.cs:line 157
+   at ConSolServiceApp.Form1.ProcessDBs() in C:\Projects\ConSolServiceApp\ConSolServiceApp\ConSolServiceApp\Form1.cs:line 99
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at ConSolServiceApp.Form1.ProcessData(List`1 listToPro) in C:\Projects\ConSolServiceApp\ConSolServiceApp\ConSolServiceApp\Form1.cs:line 157
+   at ConSolServiceApp.Form1.ProcessDBs() in C:\Projects\ConSolServiceApp\ConSolServiceApp\ConSolServiceApp\Form1.cs:line 99
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at ConSolServiceApp.Form1.ProcessData(List`1 listToPro) in C:\Projects\ConSolServiceApp\ConSolServiceApp\ConSolServiceApp\Form1.cs:line 157
+   at ConSolServiceApp.Form1.ProcessDBs() in C:\Projects\ConSolServiceApp\ConSolServiceApp\ConSolServiceApp\Form1.cs:line 99
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at ConSolServiceApp.Form1.ProcessData(List`1 listToPro) in C:\Projects\ConSolServiceApp\ConSolServiceApp\ConSolServiceApp\Form1.cs:line 157
+   at ConSolServiceApp.Form1.ProcessDBs() in C:\Projects\ConSolServiceApp\ConSolServiceApp\ConSolServiceApp\Form1.cs:line 99
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at ConSolServiceApp.Form1.ProcessData(List`1 listToPro)
+   at ConSolServiceApp.Form1.ProcessDBs()
+System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+   at System.Linq.Enumerable.Contains[TSource](IEnumerable`1 source, TSource value, IEqualityComparer`1 comparer)
+   at System.Linq.Enumerable.Contains[TSource](IEnumerable`1 source, TSource value)
+   at ConSolServiceApp.Form1.ProcessData(List`1 listToPro) in C:\Projects\ConSolServiceApp\ConSolServiceApp\ConSolServiceApp\Form1.cs:line 142
+   at ConSolServiceApp.Form1.ProcessDBs() in C:\Projects\ConSolServiceApp\ConSolServiceApp\ConSolServiceApp\Form1.cs:line 99
+System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+   at System.Linq.Enumerable.Contains[TSource](IEnumerable`1 source, TSource value, IEqualityComparer`1 comparer)
+   at System.Linq.Enumerable.Contains[TSource](IEnumerable`1 source, TSource value)
+   at ConSolServiceApp.Form1.ProcessData(List`1 listToPro) in C:\Projects\ConSolServiceApp\ConSolServiceApp\ConSolServiceApp\Form1.cs:line 142
+   at ConSolServiceApp.Form1.ProcessDBs() in C:\Projects\ConSolServiceApp\ConSolServiceApp\ConSolServiceApp\Form1.cs:line 99
+System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+   at System.Linq.Enumerable.Contains[TSource](IEnumerable`1 source, TSource value, IEqualityComparer`1 comparer)
+   at System.Linq.Enumerable.Contains[TSource](IEnumerable`1 source, TSource value)
+   at ConSolServiceApp.Form1.ProcessData(List`1 listToPro) in C:\Projects\ConSolServiceApp\ConSolServiceApp\ConSolServiceApp\Form1.cs:line 142
+   at ConSolServiceApp.Form1.ProcessDBs() in C:\Projects\ConSolServiceApp\ConSolServiceApp\ConSolServiceApp\Form1.cs:line 99
+System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+   at System.Linq.Enumerable.Contains[TSource](IEnumerable`1 source, TSource value, IEqualityComparer`1 comparer)
+   at System.Linq.Enumerable.Contains[TSource](IEnumerable`1 source, TSource value)
+   at ConSolServiceApp.Form1.ProcessData(List`1 listToPro) in C:\Projects\ConSolServiceApp\ConSolServiceApp\ConSolServiceApp\Form1.cs:line 142
+   at ConSolServiceApp.Form1.ProcessDBs() in C:\Projects\ConSolServiceApp\ConSolServiceApp\ConSolServiceApp\Form1.cs:line 99
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at ConSolServiceApp.Form1.ProcessData(List`1 listToPro) in C:\Projects\ConSolServiceApp\ConSolServiceApp\ConSolServiceApp\Form1.cs:line 165
+   at ConSolServiceApp.Form1.ProcessDBs() in C:\Projects\ConSolServiceApp\ConSolServiceApp\ConSolServiceApp\Form1.cs:line 99
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at ConSolServiceApp.Form1.ProcessData(List`1 listToPro) in C:\Projects\ConSolServiceApp\ConSolServiceApp\ConSolServiceApp\Form1.cs:line 165
+   at ConSolServiceApp.Form1.ProcessDBs() in C:\Projects\ConSolServiceApp\ConSolServiceApp\ConSolServiceApp\Form1.cs:line 99
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at ConSolServiceApp.Form1.ProcessData(List`1 listToPro) in C:\Projects\ConSolServiceApp\ConSolServiceApp\ConSolServiceApp\Form1.cs:line 165
+   at ConSolServiceApp.Form1.ProcessDBs() in C:\Projects\ConSolServiceApp\ConSolServiceApp\ConSolServiceApp\Form1.cs:line 99
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at ConSolServiceApp.Form1.ProcessData(List`1 listToPro) in C:\Projects\ConSolServiceApp\ConSolServiceApp\ConSolServiceApp\Form1.cs:line 165
+   at ConSolServiceApp.Form1.ProcessDBs() in C:\Projects\ConSolServiceApp\ConSolServiceApp\ConSolServiceApp\Form1.cs:line 99
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at ConSolServiceApp.Form1.ProcessData(List`1 listToPro) in C:\Projects\ConSolServiceApp\ConSolServiceApp\ConSolServiceApp\Form1.cs:line 165
+   at ConSolServiceApp.Form1.ProcessDBs() in C:\Projects\ConSolServiceApp\ConSolServiceApp\ConSolServiceApp\Form1.cs:line 99
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at ConSolServiceApp.Form1.ProcessData(List`1 listToPro) in C:\Projects\ConSolServiceApp\ConSolServiceApp\ConSolServiceApp\Form1.cs:line 165
+   at ConSolServiceApp.Form1.ProcessDBs() in C:\Projects\ConSolServiceApp\ConSolServiceApp\ConSolServiceApp\Form1.cs:line 99
