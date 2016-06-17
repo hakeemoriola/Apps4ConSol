@@ -1374,18 +1374,19 @@ namespace ConSolHWeb.Data
             {
                 con.Open();
                 SqlCommand cmd = new SqlCommand(@"Select
-                                                        (select count(distinct MOBILENUMBER1) from VxDataPoints) PhoneNoCount
-                                                        ,(select count(NAME) from VxDataPoints) NAMECount
-                                                        ,(select count(GENDER) from VxDataPoints) GENDERcount
-                                                        ,(select count(AGE) from VxDataPoints) AGECount
-                                                        --,(select count(distinct ADDRESS) from VxDataPoints) ADDRESSCount
-                                                        ,(select count(TOWN) from VxDataPoints) TOWNCount
-                                                        ,(select count(OCCUPATION) from VxDataPoints) OCCUPATIONCount
-                                                        ,(select count(JOBSTATUS) from VxDataPoints) JOBSTATUSCount
-                                                        ,(select count(DISTINCT EMAIL) from VxDataPoints) EMAILCount
-                                                        ,(select count(INDUSTRY) from VxDataPoints) INDUSTRYCount
-                                                        ,(select count(STATE) from VxDataPoints) STATECount
-                                                        ,(select count(LGA) from VxDataPoints) LGACount"
+                                                        MOBILENUMBER1Count
+                                                        ,NAMECount
+                                                        ,GENDERcount
+                                                        ,AGECount
+                                                        ,TOWNCount
+                                                        ,OCCUPATIONCount
+                                                        ,JOBSTATUSCount
+                                                        , EMAILCount
+                                                        ,INDUSTRYCount
+                                                        ,STATECount
+                                                        ,LGACount
+                                                 from DataCountDash
+                                                "
                                             , con);
                 cmd.CommandTimeout = 0;
                 SqlDataReader r = cmd.ExecuteReader();
@@ -1393,7 +1394,7 @@ namespace ConSolHWeb.Data
                 while (r.Read())
                 {
                     curr = new DataCount();
-                    curr.PhoneNoCount = (r["PhoneNoCount"] is DBNull) ? 0 : int.Parse(r["PhoneNoCount"].ToString());
+                    curr.PhoneNoCount = (r["MOBILENUMBER1Count"] is DBNull) ? 0 : int.Parse(r["MOBILENUMBER1Count"].ToString());
                     curr.NAMECount = (r["NAMECount"] is DBNull) ? 0 : int.Parse(r["NAMECount"].ToString());
                     curr.GENDERCount = (r["GENDERCount"] is DBNull) ? 0 : int.Parse(r["GENDERCount"].ToString());
                     curr.AGECount = (r["AGECount"] is DBNull) ? 0 : int.Parse(r["AGECount"].ToString());

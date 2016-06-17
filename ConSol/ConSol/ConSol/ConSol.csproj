@@ -2174,16 +2174,16 @@
     <Folder Include="Reports\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\ConSolHWeb.Data\ConSolHWeb.Data\ConSolHWeb.Data.csproj">
-      <Project>{e49a636a-cf65-426c-8b5d-daf8e95769c2}</Project>
-      <Name>ConSolHWeb.Data</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <TypeScriptCompile Include="scripts\typings\jquery\jquery.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\ConSolHWeb.Data\ConSolHWeb.Data\ConSolHWeb.Data.csproj">
+      <Project>{e49a636a-cf65-426c-8b5d-daf8e95769c2}</Project>
+      <Name>ConSolHWeb.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

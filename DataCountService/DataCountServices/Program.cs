@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.Configuration.Install;
+using System.Reflection;
 using System.ServiceProcess;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataCountServices
 {
@@ -12,14 +10,29 @@ namespace DataCountServices
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        ///
+
         private static void Main()
         {
-            ServiceBase[] ServicesToRun;
-            ServicesToRun = new ServiceBase[]
+            try
             {
-                new DataCountServices()
-            };
-            ServiceBase.Run(ServicesToRun);
+#if DEBUG
+                DataCountServices service = new DataCountServices();
+                service.OnDebug();
+                System.Threading.Thread.Sleep(System.Threading.Timeout.Infinite);
+#else
+
+                                                                if (Environment.UserInteractive)
+                                                                    ManagedInstallerClass.InstallHelper(new string[] { Assembly.GetExecutingAssembly().Location });
+                                                                else
+                                                                    ServiceBase.Run(new DataCountServices());
+
+#endif
+            }
+            catch (Exception ex)
+            {
+                DataCountServices.writeOutput("Service_Log.txt", ex.ToString());
+            }
         }
     }
 }

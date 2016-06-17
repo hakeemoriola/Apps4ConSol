@@ -1,0 +1,7 @@
+C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\DataCountService\DataCountServices\bin\Release\DataCountServices.exe.config
+C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\DataCountService\DataCountServices\bin\Release\DataCountServices.exe
+C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\DataCountService\DataCountServices\bin\Release\DataCountServices.pdb
+C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\DataCountService\DataCountServices\obj\Release\DataCountServices.ProjectInstaller.resources
+C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\DataCountService\DataCountServices\obj\Release\DataCountServices.csproj.GenerateResource.Cache
+C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\DataCountService\DataCountServices\obj\Release\DataCountServices.exe
+C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\DataCountService\DataCountServices\obj\Release\DataCountServices.pdb

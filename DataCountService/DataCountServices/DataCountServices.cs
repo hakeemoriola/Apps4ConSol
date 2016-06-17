@@ -1,5 +1,5 @@
-﻿using ConSol.App.Data;
-using System;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -17,9 +17,13 @@ namespace DataCountServices
 {
     public partial class DataCountServices : ServiceBase
     {
+        private Hashtable columns = new Hashtable();
+        private string ConStr = "";
+
         private System.Timers.Timer timer;
 
         /*
+         *
          * New Approach
          SELECT *
         FROM DataCount
@@ -43,6 +47,8 @@ namespace DataCountServices
             /*
              * Step 1
              *
+             * Truncate the Datacount table;
+             *
              * Get all table data in DataDashBoard and their connection details then run count on each of the tables
              * and save the result of each count in the  TotalRecordCount.
              *
@@ -51,49 +57,80 @@ namespace DataCountServices
              * and save the result of each count in the  TotalUniqueCount.
              *
              */
-            List<Configsetting> list = await GetAllDatabaseSettingAsync();
-            if (list != null)
+            using (SqlConnection con = new SqlConnection())
             {
-                foreach (var currentdb in list)
+                ConStr = ConfigurationManager.AppSettings["DbConnectionString"];
+                con.ConnectionString = ConStr;
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("", con);
+                cmd.CommandTimeout = 0;
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = @"    truncate table DataCount
+                                        insert into DataCount(ColumnName,ColumnCount)
+                                        select COLUMN_NAME,0 from INFORMATION_SCHEMA.COLUMNS where TABLE_Name='VxDataPoints'
+                                        select COLUMN_NAME from INFORMATION_SCHEMA.COLUMNS where TABLE_Name='VxDataPoints' and COLUMN_NAME not in ('AddrSet','ADDRESS')
+                                   ";
+                SqlDataReader r = cmd.ExecuteReader();
+                while (r.Read())
                 {
-                    int TotalDataCount = 0, UniqueDataCount = 0;
+                    if (r["COLUMN_NAME"].ToString() != "ADDRESS" || r["COLUMN_NAME"].ToString() != "AddrSet")
+                    {
+                        columns[r["COLUMN_NAME"].ToString()] = (r["COLUMN_NAME"] is DBNull) ? "" : r["COLUMN_NAME"].ToString();
+                    }
+                }
+                cmd = null;
+                GenerateSQLThenExecute(columns);
+            }
+
+            Hashtable columnList = await GetAllColumnListAsync();
+            if (columnList != null)
+            {
+                foreach (string columnData in columnList.Keys)
+                {
+                    int TotalDataCount = Convert.ToInt32(columnList[columnData].ToString());
                     try
                     {
                         using (SqlConnection con = new SqlConnection())
                         {
-                            string ConStr = string.Format("Data Source={0}; Initial Catalog={1}; User ID={2}; Password={3};", currentdb.ServerIP, currentdb.Database.Remove(currentdb.Database.Length - 2, 2), currentdb.Username, currentdb.Password);
                             con.ConnectionString = ConStr;
                             con.Open();
 
                             SqlCommand cmd = new SqlCommand("", con);
                             cmd.CommandTimeout = 0;
-                            cmd.CommandText = "SELECT count(*) TotalDataCount, count(distinct " + currentdb.DBColumn + ") UniqueDataCount from " + currentdb.TableName;
-                            SqlDataReader r = cmd.ExecuteReader();
-
-                            while (r.Read())
-                            {
-                                TotalDataCount = (r["TotalDataCount"] is DBNull) ? 0 : int.Parse(r["TotalDataCount"].ToString());
-                                UniqueDataCount = (r["UniqueDataCount"] is DBNull) ? 0 : int.Parse(r["UniqueDataCount"].ToString());
-                            }
+                            cmd.CommandText = string.Format(@"    UPDATE DataCount SET ColumnCount = {1} where ColumnName = '{0}'
+                                                                  UPDATE DataCountDash set {0}Count = {1}
+                                                             ", columnData, TotalDataCount);
+                            int result = cmd.ExecuteNonQuery();
                         }
                     }
                     catch (Exception ex)
                     {
-                        TotalDataCount = 0; UniqueDataCount = 0;
                         writeOutput("Service_Log.txt", ex.ToString());
                     }
-                    UpDateDashBoard(currentdb.Id, TotalDataCount, UniqueDataCount);
+
+                    writeOutput("Service_Log.txt", "Service Updated Successfully! " + DateTime.Now.ToString());
                 }
-                writeOutput("Service_Log.txt", "Service Updated Successfully! " + DateTime.Now.ToString());
             }
         }
 
-        private void UpDateDashBoard(int id, int totalDataCount, int uniqueDataCount)
+        private void GenerateSQLThenExecute(Hashtable columns)
         {
-            string SQL = "UPDATE   DataDashBoard SET    TotalRecordCount =" + totalDataCount + ", TotalUniqueCount = " + uniqueDataCount + " where DbId = " + id;
+            StringBuilder sb = new StringBuilder();
+            sb.Append("DROP TABLE [dbo].[DataCountDash]");
+            sb.Append("CREATE TABLE [dbo].[DataCountDash](");
+            sb.Append("[Id] [int] IDENTITY(1,1) NOT NULL,");
+            foreach (string item in columns.Keys)
+            {
+                string line = string.Format("[{0}Count] [int] NULL default 0,", item);
+                sb.Append(line);
+            }
+            sb.Append("CONSTRAINT [PK_DataCountDash] PRIMARY KEY CLUSTERED ([Id]))");
+            sb.Append("insert into DataCountDash(NAMECount) values(0)");
+            string SQL = sb.ToString();
             using (SqlConnection con = new SqlConnection())
             {
-                con.ConnectionString = "Data Source=(local);Initial Catalog=ConSolHDB;User ID=ConsolHDBUsr; Password=123abc,./;MultipleActiveResultSets=True";
+                con.ConnectionString = ConfigurationManager.AppSettings["DbConnectionString"];
                 con.Open();
                 SqlCommand cmd = new SqlCommand(SQL, con);
                 cmd.CommandTimeout = 0;
@@ -102,52 +139,40 @@ namespace DataCountServices
             }
         }
 
-        private async Task<List<Configsetting>> GetAllDatabaseSettingAsync()
+        private async Task<Hashtable> GetAllColumnListAsync()
         {
-            var result = await Task.Run(() => GetAllDatabaseSetting());
+            var result = await Task.Run(() => GetAllDataAndGetCount());
             return result;
         }
 
-        private List<Configsetting> GetAllDatabaseSetting()
+        private async Task<Hashtable> GetAllDataAndGetCount()
         {
-            List<Configsetting> ml = new List<Configsetting>();
-            try
+            Hashtable ht = new Hashtable();
+            foreach (string column in columns.Keys)
             {
-                using (SqlConnection con = new SqlConnection())
+                if (!string.IsNullOrEmpty(column))
                 {
-                    con.ConnectionString = "Data Source=(local);Initial Catalog=ConSolHDB;User ID=ConsolHDBUsr; Password=123abc,./;MultipleActiveResultSets=True";
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand("", con);
-                    cmd.CommandText = @"SELECT DISTINCT a.Id, a.ProjectName, a.IsActive, a.Password, a.Port, a.ServerIP, a.Username, b.TableName, c.DBColumn,a.[Database]
-                                        FROM            ConSettings AS a INNER JOIN
-                                                                 DBMetaTables AS b ON a.Id = b.DBId
-                                        join MatchMetaColumns c on b.Id = c.TableId
-                                        WHERE        (a.Id IN  (SELECT        DbId FROM DataDashBoard) and c.IsDColumn=1)";
-                    cmd.CommandType = CommandType.Text;
-                    SqlDataReader r = cmd.ExecuteReader();
-                    while (r.Read())
+                    try
                     {
-                        Configsetting curr = new Configsetting();
-                        curr.Id = (r["Id"] is DBNull) ? 0 : int.Parse(r["Id"].ToString());
-                        curr.Database = (r["Database"] is DBNull) ? string.Empty : (string)r["Database"];
-                        curr.Username = (r["Username"] is DBNull) ? string.Empty : (string)r["Username"];
-                        curr.Password = (r["Password"] is DBNull) ? string.Empty : (string)r["Password"];
-                        curr.Port = (r["Port"] is DBNull) ? string.Empty : (string)r["Port"];
-                        curr.ProjectName = (r["ProjectName"] is DBNull) ? string.Empty : (string)r["ProjectName"];
-                        curr.ServerIP = (r["ServerIP"] is DBNull) ? string.Empty : (string)r["ServerIP"];
-                        curr.TableName = (r["TableName"] is DBNull) ? string.Empty : (string)r["TableName"];
-                        curr.DBColumn = (r["DBColumn"] is DBNull) ? string.Empty : (string)r["DBColumn"];
-                        curr.IsActive = true;
-                        ml.Add(curr);
+                        using (SqlConnection con = new SqlConnection())
+                        {
+                            con.ConnectionString = ConStr;
+                            con.Open();
+                            SqlCommand cmd = new SqlCommand("", con);
+                            cmd.CommandText = string.Format(@"select count({0}) from VxDataPoints", column);
+                            cmd.CommandType = CommandType.Text;
+                            object r = await cmd.ExecuteScalarAsync();
+                            ht[column] = Convert.ToInt32(r.ToString());
+                        }
                     }
-                    r.Close();
+                    catch (Exception ex)
+                    {
+                        ht[column] = 0;
+                        writeOutput("Service_Log.txt", ex.ToString());
+                    }
                 }
             }
-            catch (Exception ex)
-            {
-                writeOutput("Service_Log.txt", ex.ToString());
-            }
-            return ml;
+            return ht;
         }
 
         public static void writeOutput(string fname, string fcontent)

@@ -13,10 +13,6 @@ namespace ConSol.Controls
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-        }
-
-        protected void BtnCommand_Click(object sender, EventArgs e)
-        {
             //select count(*) from [VxTelephones]
             DataCount item = DataService.Provider.GetDataCount();
             if (item != null)

@@ -24,4 +24,3 @@
 <p>
     &nbsp;
 </p>
-<asp:Button ID="BtnCommand" runat="server" Text="Get Data Count" OnClick="BtnCommand_Click" />

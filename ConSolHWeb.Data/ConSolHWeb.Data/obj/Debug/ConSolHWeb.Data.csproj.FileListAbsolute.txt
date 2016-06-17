@@ -10,3 +10,9 @@ C:\Projects\ConSolHWeb.Data\ConSolHWeb.Data\bin\Debug\EntityFramework.SqlServer.
 C:\Projects\ConSolHWeb.Data\ConSolHWeb.Data\obj\Debug\ConSolHWeb.Data.csprojResolveAssemblyReference.cache
 C:\Projects\ConSolHWeb.Data\ConSolHWeb.Data\obj\Debug\ConSolHWeb.Data.dll
 C:\Projects\ConSolHWeb.Data\ConSolHWeb.Data\obj\Debug\ConSolHWeb.Data.pdb
+C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\ConSolHWeb.Data\ConSolHWeb.Data\bin\Debug\ConSolHWeb.Data.dll.config
+C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\ConSolHWeb.Data\ConSolHWeb.Data\bin\Debug\ConSolHWeb.Data.dll
+C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\ConSolHWeb.Data\ConSolHWeb.Data\bin\Debug\ConSolHWeb.Data.pdb
+C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\ConSolHWeb.Data\ConSolHWeb.Data\bin\Debug\Microsoft.ApplicationBlocks.Data.dll
+C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\ConSolHWeb.Data\ConSolHWeb.Data\obj\Debug\ConSolHWeb.Data.dll
+C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\ConSolHWeb.Data\ConSolHWeb.Data\obj\Debug\ConSolHWeb.Data.pdb
