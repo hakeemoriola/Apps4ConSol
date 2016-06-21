@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConSol.App.Data", "..\ConSo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConSolHWeb.Data", "..\ConSolHWeb.Data\ConSolHWeb.Data\ConSolHWeb.Data.csproj", "{E49A636A-CF65-426C-8B5D-DAF8E95769C2}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "DataCountServicesSetup", "..\DataCountServicesSetup\DataCountServicesSetup\DataCountServicesSetup.vdproj", "{040CEDC3-650F-446E-93F1-E2163D159954}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -79,6 +81,10 @@ Global
 		{E49A636A-CF65-426C-8B5D-DAF8E95769C2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E49A636A-CF65-426C-8B5D-DAF8E95769C2}.Release|x86.ActiveCfg = Release|Any CPU
 		{E49A636A-CF65-426C-8B5D-DAF8E95769C2}.Release|x86.Build.0 = Release|Any CPU
+		{040CEDC3-650F-446E-93F1-E2163D159954}.Debug|Any CPU.ActiveCfg = Debug
+		{040CEDC3-650F-446E-93F1-E2163D159954}.Debug|x86.ActiveCfg = Debug
+		{040CEDC3-650F-446E-93F1-E2163D159954}.Release|Any CPU.ActiveCfg = Release
+		{040CEDC3-650F-446E-93F1-E2163D159954}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

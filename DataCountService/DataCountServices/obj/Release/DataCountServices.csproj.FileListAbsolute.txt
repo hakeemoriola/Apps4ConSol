@@ -5,3 +5,4 @@ C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\DataCountService\DataCountServices
 C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\DataCountService\DataCountServices\obj\Release\DataCountServices.csproj.GenerateResource.Cache
 C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\DataCountService\DataCountServices\obj\Release\DataCountServices.exe
 C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\DataCountService\DataCountServices\obj\Release\DataCountServices.pdb
+C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\DataCountService\DataCountServices\obj\Release\DataCountServices.csprojResolveAssemblyReference.cache

@@ -401,3 +401,13 @@ System.InvalidOperationException: The installation failed, and the rollback has 
    --- End of inner exception stack trace ---
    at System.Configuration.Install.ManagedInstallerClass.InstallHelper(String[] args)
    at DataCountServices.Program.Main() in C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\DataCountService\DataCountServices\Program.cs:line 26
+System.InvalidOperationException: The installation failed, and the rollback has been performed. ---> System.ComponentModel.Win32Exception: The specified service already exists
+   at System.ServiceProcess.ServiceInstaller.Install(IDictionary stateSaver)
+   at System.Configuration.Install.Installer.Install(IDictionary stateSaver)
+   at System.Configuration.Install.Installer.Install(IDictionary stateSaver)
+   at System.Configuration.Install.AssemblyInstaller.Install(IDictionary savedState)
+   at System.Configuration.Install.Installer.Install(IDictionary stateSaver)
+   at System.Configuration.Install.TransactedInstaller.Install(IDictionary savedState)
+   --- End of inner exception stack trace ---
+   at System.Configuration.Install.ManagedInstallerClass.InstallHelper(String[] args)
+   at DataCountServices.Program.Main() in C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\DataCountService\DataCountServices\Program.cs:line 26

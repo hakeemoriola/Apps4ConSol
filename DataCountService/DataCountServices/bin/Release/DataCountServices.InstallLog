@@ -246,3 +246,16 @@ Affected parameters are:
    logfile = C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\DataCountService\DataCountServices\bin\Release\DataCountServices.InstallLog
    assemblypath = C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\DataCountService\DataCountServices\bin\Release\DataCountServices.exe
 Restoring event log to previous state for source DataCountServices.
+Installing assembly 'C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\DataCountService\DataCountServices\bin\Release\DataCountServices.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\DataCountService\DataCountServices\bin\Release\DataCountServices.InstallLog
+   assemblypath = C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\DataCountService\DataCountServices\bin\Release\DataCountServices.exe
+Installing service DataCountServices...
+Creating EventLog source DataCountServices in log Application...
+Rolling back assembly 'C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\DataCountService\DataCountServices\bin\Release\DataCountServices.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\DataCountService\DataCountServices\bin\Release\DataCountServices.InstallLog
+   assemblypath = C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\DataCountService\DataCountServices\bin\Release\DataCountServices.exe
+Restoring event log to previous state for source DataCountServices.

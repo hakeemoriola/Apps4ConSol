@@ -1,0 +1,5 @@
+C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\ConSol.App.Data\ConSol.App.Data\bin\Release\ConSol.App.Data.dll
+C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\ConSol.App.Data\ConSol.App.Data\bin\Release\ConSol.App.Data.pdb
+C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\ConSol.App.Data\ConSol.App.Data\obj\Release\ConSol.App.Data.csprojResolveAssemblyReference.cache
+C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\ConSol.App.Data\ConSol.App.Data\obj\Release\ConSol.App.Data.dll
+C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\ConSol.App.Data\ConSol.App.Data\obj\Release\ConSol.App.Data.pdb

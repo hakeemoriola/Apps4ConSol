@@ -13,8 +13,6 @@ C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\ConSolHWeb.Data\ConSolHWeb.Data\bi
 C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\ConSolHWeb.Data\ConSolHWeb.Data\bin\Release\ConSolHWeb.Data.dll
 C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\ConSolHWeb.Data\ConSolHWeb.Data\bin\Release\ConSolHWeb.Data.pdb
 C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\ConSolHWeb.Data\ConSolHWeb.Data\bin\Release\Microsoft.ApplicationBlocks.Data.dll
-C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\ConSolHWeb.Data\ConSolHWeb.Data\bin\Release\EntityFramework.xml
-C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\ConSolHWeb.Data\ConSolHWeb.Data\bin\Release\EntityFramework.SqlServer.xml
 C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\ConSolHWeb.Data\ConSolHWeb.Data\obj\Release\ConSolHWeb.Data.csprojResolveAssemblyReference.cache
 C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\ConSolHWeb.Data\ConSolHWeb.Data\obj\Release\ConSolHWeb.Data.dll
 C:\Users\OMOH-PC\Documents\GitHub\Apps4ConSol\ConSolHWeb.Data\ConSolHWeb.Data\obj\Release\ConSolHWeb.Data.pdb
